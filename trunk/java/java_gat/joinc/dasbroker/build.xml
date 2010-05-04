@@ -1,0 +1,63 @@
+<project name="DASResourceBrokerAdaptor" default="build" basedir=".">
+        <description>
+          Build file for the DAS Resource Broker Adaptor
+        </description>
+
+        <property environment="env"/>
+
+        <property file="build.properties"/>
+
+	<!-- Global properties for GAT -->
+	<property name="src" location="src" />
+	<property name="build" location="build" />
+	<property name="jar" location="jar" />
+	<property name="java.debug.value" value="true" />
+
+	<path id="gat_jars">
+		<!--<fileset dir="${env.GAT_LOCATION}">-->
+		<fileset dir="/media/disk/workspace/JavaGAT-1.7.1">
+			<include name="**/*.jar" />
+		</fileset>
+		
+		<fileset dir="lib">
+			<include name="**/*.jar" />	
+		</fileset>		
+	</path>
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${jar}" />
+		<mkdir dir="${build}" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac source="1.4" srcdir="${src}" destdir="${build}" debug="on" >
+			<classpath refid="gat_jars" />
+		</javac>
+	</target>
+
+	<target name="build" depends="compile" description="build the JARs">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${jar}" />
+
+		<jar jarfile="${jar}/DASResourceBrokerAdaptor.jar" basedir="${build}" includes="**/*.class">
+			<manifest>
+				<attribute name="ResourceBrokerCpi-class" value="broker.das.DASResourceBrokerAdaptor" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="clean" description="clean up">
+	      <delete dir="${build}"/>
+      	      <delete dir="${jar}"/>
+	</target>
+
+	<target name="distclean" depends="clean" description="really clean up">
+	      <delete dir="${src}/adaptive"/>
+	</target>
+
+</project>

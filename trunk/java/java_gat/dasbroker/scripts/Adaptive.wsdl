@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" xmlns:intf="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://beans.adaptive" xmlns:tns2="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><wsdl:types><schema targetNamespace="http://beans.adaptive" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="QueueInfo"><sequence><element name="avgJobWaitingTime" type="xsd:float"/><element name="avgWaitingJobs" type="xsd:float"/><element name="sdJobWaitingTime" type="xsd:float"/></sequence></complexType><complexType name="DoubleMeasurement"><sequence><element name="time" type="xsd:long"/><element name="value" type="xsd:double"/></sequence></complexType><complexType name="Queue"><sequence><element name="hostname" nillable="true" type="xsd:string"/><element name="jobmanager" nillable="true" type="xsd:string"/><element name="queueName" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="MetricOption"><sequence><element name="comment" nillable="true" type="xsd:string"/><element name="name" nillable="true" type="xsd:string"/><element name="type" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="MetricDescription"><sequence><element name="comment" nillable="true" type="xsd:string"/><element name="name" nillable="true" type="xsd:string"/><element name="parameters" nillable="true" type="impl:ArrayOf_tns2_MetricOption"/><element name="results" nillable="true" type="impl:ArrayOf_tns2_MetricOption"/></sequence></complexType><complexType name="TcpOptions"><sequence><element name="nrStreams" type="xsd:int"/><element name="receiveBufferSize" type="xsd:int"/><element name="sendBufferSize" type="xsd:int"/></sequence></complexType><complexType name="KeyValue"><sequence><element name="key" nillable="true" type="xsd:string"/><element name="value" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="ApplicationInfo"><sequence><element name="id" nillable="true" type="xsd:string"/><element name="properties" nillable="true" type="impl:ArrayOf_tns2_KeyValue"/></sequence></complexType><complexType name="QueueConf"><sequence><element name="available" type="xsd:boolean"/><element name="cpuTime" type="xsd:int"/><element name="cpus" type="xsd:int"/><element name="maxJobs" type="xsd:int"/><element name="maxMem" type="xsd:int"/><element name="nodes" type="xsd:int"/><element name="wallTime" type="xsd:int"/></sequence></complexType><complexType name="NetworkGraph"><sequence/></complexType><complexType name="ResourceInfo"><sequence><element name="hostName" nillable="true" type="xsd:string"/><element name="outputTime" type="xsd:int"/><element name="properties" nillable="true" type="impl:ArrayOf_tns2_KeyValue"/><element name="runTime" type="xsd:int"/></sequence></complexType><complexType name="ResourceUtilization"><sequence><element name="avgFreeNodes" type="xsd:float"/></sequence></complexType></schema><schema targetNamespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="ArrayOf_tns2_MetricOption"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:MetricOption[]"/></restriction></complexContent></complexType><complexType name="ArrayOf_tns2_KeyValue"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:KeyValue[]"/></restriction></complexContent></complexType><complexType name="AdaptiveServiceException"><sequence><element name="errorCode" type="xsd:int"/><element name="message" nillable="true" type="xsd:string"/></sequence></complexType></schema><schema targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="mapItem"><sequence><element name="key" nillable="true" type="xsd:string"/><element name="value" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="Map"><sequence><element maxOccurs="unbounded" minOccurs="0" name="item" type="apachesoap:mapItem"/></sequence></complexType></schema><schema targetNamespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="AdaptiveServiceException"><sequence><element name="errorCode" type="xsd:int"/><element name="message" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="ArrayOf_tns2_DoubleMeasurement"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:DoubleMeasurement[]"/></restriction></complexContent></complexType><complexType name="ArrayOf_xsd_string"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/></restriction></complexContent></complexType><complexType name="ArrayOfArrayOfArrayOf_tns2_DoubleMeasurement"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:DoubleMeasurement[][][]"/></restriction></complexContent></complexType><complexType name="ArrayOf_tns2_ResourceInfo"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:ResourceInfo[]"/></restriction></complexContent></complexType><complexType name="ArrayOf_xsd_double"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:double[]"/></restriction></complexContent></complexType><complexType name="ArrayOfArrayOf_xsd_double"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:double[][]"/></restriction></complexContent></complexType><complexType name="ArrayOf_tns2_MetricDescription"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:MetricDescription[]"/></restriction></complexContent></complexType><complexType name="ArrayOf_tns2_Queue"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Queue[]"/></restriction></complexContent></complexType></schema></wsdl:types>
+  <wsdl:message name="estimateNetworkMetricMatrixRequest">
+    <wsdl:part name="hostNames" type="tns2:ArrayOf_xsd_string"/>
+    <wsdl:part name="metric" type="xsd:string"/>
+    <wsdl:part name="operation" type="xsd:string"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+    <wsdl:part name="endTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="estimateNetworkPathRequest">
+    <wsdl:part name="from" type="xsd:string"/>
+    <wsdl:part name="to" type="xsd:string"/>
+    <wsdl:part name="operation" type="xsd:string"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+    <wsdl:part name="endTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="getMetricResponse">
+    <wsdl:part name="getMetricReturn" type="apachesoap:Map"/>
+  </wsdl:message>
+  <wsdl:message name="getServiceDescriptionResponse">
+    <wsdl:part name="getServiceDescriptionReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getLogsResponse">
+    <wsdl:part name="getLogsReturn" type="tns2:ArrayOf_xsd_string"/>
+  </wsdl:message>
+  <wsdl:message name="estimateTransferTimeRequest">
+    <wsdl:part name="substractLoggedTraffic" type="xsd:boolean"/>
+    <wsdl:part name="src" type="xsd:string"/>
+    <wsdl:part name="dest" type="xsd:string"/>
+    <wsdl:part name="dataSize" type="xsd:long"/>
+    <wsdl:part name="transferMethod" type="xsd:string"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="getActiveSitesRequest">
+  </wsdl:message>
+  <wsdl:message name="estimateTransferTimeOneToManyResponse">
+    <wsdl:part name="estimateTransferTimeOneToManyReturn" type="tns2:ArrayOf_xsd_double"/>
+  </wsdl:message>
+  <wsdl:message name="getActiveSitesResponse">
+    <wsdl:part name="getActiveSitesReturn" type="tns2:ArrayOf_xsd_string"/>
+  </wsdl:message>
+  <wsdl:message name="estimateTransferTimeOneToManyRequest">
+    <wsdl:part name="substractLoggedTraffic" type="xsd:boolean"/>
+    <wsdl:part name="sourceResource" type="xsd:string"/>
+    <wsdl:part name="destinationResources" type="tns2:ArrayOf_xsd_string"/>
+    <wsdl:part name="dataSize" type="xsd:long"/>
+    <wsdl:part name="transferMethod" type="xsd:string"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="getResourceUtilizationRequest">
+    <wsdl:part name="queue" type="tns1:Queue"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+    <wsdl:part name="endTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="getReplicaTransferTimeRequest">
+    <wsdl:part name="substractLoggedTraffic" type="xsd:boolean"/>
+    <wsdl:part name="sourceURIs" type="tns2:ArrayOf_xsd_string"/>
+    <wsdl:part name="destinationURI" type="xsd:string"/>
+    <wsdl:part name="dataSize" type="xsd:long"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="getQueuesResponse">
+    <wsdl:part name="getQueuesReturn" type="tns2:ArrayOf_tns2_Queue"/>
+  </wsdl:message>
+  <wsdl:message name="rankResourcesResponse">
+    <wsdl:part name="rankResourcesReturn" type="tns2:ArrayOf_tns2_ResourceInfo"/>
+  </wsdl:message>
+  <wsdl:message name="logDataTransferRequest">
+    <wsdl:part name="source" type="xsd:string"/>
+    <wsdl:part name="destination" type="xsd:string"/>
+    <wsdl:part name="dataSize" type="xsd:long"/>
+    <wsdl:part name="transferMethod" type="xsd:string"/>
+    <wsdl:part name="options" type="tns1:TcpOptions"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+    <wsdl:part name="endTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="estimateTransferTimeManyToManyResponse">
+    <wsdl:part name="estimateTransferTimeManyToManyReturn" type="tns2:ArrayOfArrayOf_xsd_double"/>
+  </wsdl:message>
+  <wsdl:message name="getQueueInfoResponse">
+    <wsdl:part name="getQueueInfoReturn" type="tns1:QueueInfo"/>
+  </wsdl:message>
+  <wsdl:message name="getQueueConfRequest">
+    <wsdl:part name="queue" type="tns1:Queue"/>
+  </wsdl:message>
+  <wsdl:message name="getMetricRequest">
+    <wsdl:part name="metric" type="xsd:string"/>
+    <wsdl:part name="parameters" type="apachesoap:Map"/>
+  </wsdl:message>
+  <wsdl:message name="estimateNetworkGraphRequest">
+    <wsdl:part name="resources" type="tns2:ArrayOf_xsd_string"/>
+    <wsdl:part name="operation" type="xsd:string"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+    <wsdl:part name="endTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="getQueueInfoRequest">
+    <wsdl:part name="queue" type="tns1:Queue"/>
+    <wsdl:part name="jobSize" type="xsd:int"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+    <wsdl:part name="endTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="getLogsRequest">
+    <wsdl:part name="service" type="xsd:string"/>
+    <wsdl:part name="component" type="xsd:string"/>
+    <wsdl:part name="origin" type="xsd:string"/>
+    <wsdl:part name="severity" type="xsd:int"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+    <wsdl:part name="endTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="estimateTcpOptionsRequest">
+    <wsdl:part name="src" type="xsd:string"/>
+    <wsdl:part name="dest" type="xsd:string"/>
+    <wsdl:part name="dataSize" type="xsd:long"/>
+    <wsdl:part name="transferMethod" type="xsd:string"/>
+    <wsdl:part name="maxTcpStreams" type="xsd:int"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="estimateTransferTimeResponse">
+    <wsdl:part name="estimateTransferTimeReturn" type="xsd:double"/>
+  </wsdl:message>
+  <wsdl:message name="knownMetricsResponse">
+    <wsdl:part name="knownMetricsReturn" type="tns2:ArrayOf_tns2_MetricDescription"/>
+  </wsdl:message>
+  <wsdl:message name="knownMetricsRequest">
+    <wsdl:part name="hostName" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="estimateTransferTimeManyToOneRequest">
+    <wsdl:part name="substractLoggedTraffic" type="xsd:boolean"/>
+    <wsdl:part name="sourceResources" type="tns2:ArrayOf_xsd_string"/>
+    <wsdl:part name="destinationResource" type="xsd:string"/>
+    <wsdl:part name="dataSize" type="xsd:long"/>
+    <wsdl:part name="transferMethod" type="xsd:string"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="rankResourcesRequest">
+    <wsdl:part name="resources" type="tns2:ArrayOf_tns2_ResourceInfo"/>
+    <wsdl:part name="app" type="tns1:ApplicationInfo"/>
+  </wsdl:message>
+  <wsdl:message name="estimateTransferTimeManyToOneResponse">
+    <wsdl:part name="estimateTransferTimeManyToOneReturn" type="tns2:ArrayOf_xsd_double"/>
+  </wsdl:message>
+  <wsdl:message name="estimateNetworkMetricMatrixResponse">
+    <wsdl:part name="estimateNetworkMetricMatrixReturn" type="tns2:ArrayOfArrayOfArrayOf_tns2_DoubleMeasurement"/>
+  </wsdl:message>
+  <wsdl:message name="getReplicaTransferTimeResponse">
+    <wsdl:part name="getReplicaTransferTimeReturn" type="tns2:ArrayOf_xsd_double"/>
+  </wsdl:message>
+  <wsdl:message name="estimateTransferTimeManyToManyRequest">
+    <wsdl:part name="substractLoggedTraffic" type="xsd:boolean"/>
+    <wsdl:part name="sourceResources" type="tns2:ArrayOf_xsd_string"/>
+    <wsdl:part name="destinationResources" type="tns2:ArrayOf_xsd_string"/>
+    <wsdl:part name="dataSize" type="xsd:long"/>
+    <wsdl:part name="transferMethod" type="xsd:string"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="estimateTcpOptionsResponse">
+    <wsdl:part name="estimateTcpOptionsReturn" type="tns1:TcpOptions"/>
+  </wsdl:message>
+  <wsdl:message name="getQueuesRequest">
+  </wsdl:message>
+  <wsdl:message name="getQueueConfResponse">
+    <wsdl:part name="getQueueConfReturn" type="tns1:QueueConf"/>
+  </wsdl:message>
+  <wsdl:message name="estimateNetworkPathResponse">
+    <wsdl:part name="estimateNetworkPathReturn" type="tns2:ArrayOf_xsd_string"/>
+  </wsdl:message>
+  <wsdl:message name="estimateNetworkMetricRequest">
+    <wsdl:part name="srcHostName" type="xsd:string"/>
+    <wsdl:part name="destHostName" type="xsd:string"/>
+    <wsdl:part name="metric" type="xsd:string"/>
+    <wsdl:part name="operation" type="xsd:string"/>
+    <wsdl:part name="startTime" type="xsd:dateTime"/>
+    <wsdl:part name="endTime" type="xsd:dateTime"/>
+  </wsdl:message>
+  <wsdl:message name="estimateNetworkGraphResponse">
+    <wsdl:part name="estimateNetworkGraphReturn" type="tns1:NetworkGraph"/>
+  </wsdl:message>
+  <wsdl:message name="estimateNetworkMetricResponse">
+    <wsdl:part name="estimateNetworkMetricReturn" type="tns2:ArrayOf_tns2_DoubleMeasurement"/>
+  </wsdl:message>
+  <wsdl:message name="logDataTransferResponse">
+  </wsdl:message>
+  <wsdl:message name="getServiceDescriptionRequest">
+  </wsdl:message>
+  <wsdl:message name="AdaptiveServiceException">
+    <wsdl:part name="fault" type="tns2:AdaptiveServiceException"/>
+  </wsdl:message>
+  <wsdl:message name="getResourceUtilizationResponse">
+    <wsdl:part name="getResourceUtilizationReturn" type="tns1:ResourceUtilization"/>
+  </wsdl:message>
+  <wsdl:portType name="AdaptiveInterface">
+    <wsdl:operation name="getServiceDescription">
+      <wsdl:input message="impl:getServiceDescriptionRequest" name="getServiceDescriptionRequest"/>
+      <wsdl:output message="impl:getServiceDescriptionResponse" name="getServiceDescriptionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getMetric" parameterOrder="metric parameters">
+      <wsdl:input message="impl:getMetricRequest" name="getMetricRequest"/>
+      <wsdl:output message="impl:getMetricResponse" name="getMetricResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="estimateNetworkMetric" parameterOrder="srcHostName destHostName metric operation startTime endTime">
+      <wsdl:input message="impl:estimateNetworkMetricRequest" name="estimateNetworkMetricRequest"/>
+      <wsdl:output message="impl:estimateNetworkMetricResponse" name="estimateNetworkMetricResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="estimateNetworkMetricMatrix" parameterOrder="hostNames metric operation startTime endTime">
+      <wsdl:input message="impl:estimateNetworkMetricMatrixRequest" name="estimateNetworkMetricMatrixRequest"/>
+      <wsdl:output message="impl:estimateNetworkMetricMatrixResponse" name="estimateNetworkMetricMatrixResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="rankResources" parameterOrder="resources app">
+      <wsdl:input message="impl:rankResourcesRequest" name="rankResourcesRequest"/>
+      <wsdl:output message="impl:rankResourcesResponse" name="rankResourcesResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="estimateTcpOptions" parameterOrder="src dest dataSize transferMethod maxTcpStreams startTime">
+      <wsdl:input message="impl:estimateTcpOptionsRequest" name="estimateTcpOptionsRequest"/>
+      <wsdl:output message="impl:estimateTcpOptionsResponse" name="estimateTcpOptionsResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="estimateTransferTimeOneToMany" parameterOrder="substractLoggedTraffic sourceResource destinationResources dataSize transferMethod startTime">
+      <wsdl:input message="impl:estimateTransferTimeOneToManyRequest" name="estimateTransferTimeOneToManyRequest"/>
+      <wsdl:output message="impl:estimateTransferTimeOneToManyResponse" name="estimateTransferTimeOneToManyResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getReplicaTransferTime" parameterOrder="substractLoggedTraffic sourceURIs destinationURI dataSize startTime">
+      <wsdl:input message="impl:getReplicaTransferTimeRequest" name="getReplicaTransferTimeRequest"/>
+      <wsdl:output message="impl:getReplicaTransferTimeResponse" name="getReplicaTransferTimeResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="estimateTransferTimeManyToOne" parameterOrder="substractLoggedTraffic sourceResources destinationResource dataSize transferMethod startTime">
+      <wsdl:input message="impl:estimateTransferTimeManyToOneRequest" name="estimateTransferTimeManyToOneRequest"/>
+      <wsdl:output message="impl:estimateTransferTimeManyToOneResponse" name="estimateTransferTimeManyToOneResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="estimateTransferTime" parameterOrder="substractLoggedTraffic src dest dataSize transferMethod startTime">
+      <wsdl:input message="impl:estimateTransferTimeRequest" name="estimateTransferTimeRequest"/>
+      <wsdl:output message="impl:estimateTransferTimeResponse" name="estimateTransferTimeResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="estimateTransferTimeManyToMany" parameterOrder="substractLoggedTraffic sourceResources destinationResources dataSize transferMethod startTime">
+      <wsdl:input message="impl:estimateTransferTimeManyToManyRequest" name="estimateTransferTimeManyToManyRequest"/>
+      <wsdl:output message="impl:estimateTransferTimeManyToManyResponse" name="estimateTransferTimeManyToManyResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="logDataTransfer" parameterOrder="source destination dataSize transferMethod options startTime endTime">
+      <wsdl:input message="impl:logDataTransferRequest" name="logDataTransferRequest"/>
+      <wsdl:output message="impl:logDataTransferResponse" name="logDataTransferResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="estimateNetworkGraph" parameterOrder="resources operation startTime endTime">
+      <wsdl:input message="impl:estimateNetworkGraphRequest" name="estimateNetworkGraphRequest"/>
+      <wsdl:output message="impl:estimateNetworkGraphResponse" name="estimateNetworkGraphResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="estimateNetworkPath" parameterOrder="from to operation startTime endTime">
+      <wsdl:input message="impl:estimateNetworkPathRequest" name="estimateNetworkPathRequest"/>
+      <wsdl:output message="impl:estimateNetworkPathResponse" name="estimateNetworkPathResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveSites">
+      <wsdl:input message="impl:getActiveSitesRequest" name="getActiveSitesRequest"/>
+      <wsdl:output message="impl:getActiveSitesResponse" name="getActiveSitesResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="knownMetrics" parameterOrder="hostName">
+      <wsdl:input message="impl:knownMetricsRequest" name="knownMetricsRequest"/>
+      <wsdl:output message="impl:knownMetricsResponse" name="knownMetricsResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getQueues">
+      <wsdl:input message="impl:getQueuesRequest" name="getQueuesRequest"/>
+      <wsdl:output message="impl:getQueuesResponse" name="getQueuesResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getQueueInfo" parameterOrder="queue jobSize startTime endTime">
+      <wsdl:input message="impl:getQueueInfoRequest" name="getQueueInfoRequest"/>
+      <wsdl:output message="impl:getQueueInfoResponse" name="getQueueInfoResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getQueueConf" parameterOrder="queue">
+      <wsdl:input message="impl:getQueueConfRequest" name="getQueueConfRequest"/>
+      <wsdl:output message="impl:getQueueConfResponse" name="getQueueConfResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceUtilization" parameterOrder="queue startTime endTime">
+      <wsdl:input message="impl:getResourceUtilizationRequest" name="getResourceUtilizationRequest"/>
+      <wsdl:output message="impl:getResourceUtilizationResponse" name="getResourceUtilizationResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getLogs" parameterOrder="service component origin severity startTime endTime">
+      <wsdl:input message="impl:getLogsRequest" name="getLogsRequest"/>
+      <wsdl:output message="impl:getLogsResponse" name="getLogsResponse"/>
+      <wsdl:fault message="impl:AdaptiveServiceException" name="AdaptiveServiceException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdaptiveSoapBinding" type="impl:AdaptiveInterface">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getServiceDescription">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getServiceDescriptionRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getServiceDescriptionResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMetric">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getMetricRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getMetricResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="estimateNetworkMetric">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="estimateNetworkMetricRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="estimateNetworkMetricResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="estimateNetworkMetricMatrix">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="estimateNetworkMetricMatrixRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="estimateNetworkMetricMatrixResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rankResources">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="rankResourcesRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="rankResourcesResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="estimateTcpOptions">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="estimateTcpOptionsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="estimateTcpOptionsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="estimateTransferTimeOneToMany">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="estimateTransferTimeOneToManyRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="estimateTransferTimeOneToManyResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReplicaTransferTime">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getReplicaTransferTimeRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getReplicaTransferTimeResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="estimateTransferTimeManyToOne">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="estimateTransferTimeManyToOneRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="estimateTransferTimeManyToOneResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="estimateTransferTime">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="estimateTransferTimeRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="estimateTransferTimeResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="estimateTransferTimeManyToMany">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="estimateTransferTimeManyToManyRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="estimateTransferTimeManyToManyResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="logDataTransfer">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="logDataTransferRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="logDataTransferResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="estimateNetworkGraph">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="estimateNetworkGraphRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="estimateNetworkGraphResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="estimateNetworkPath">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="estimateNetworkPathRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="estimateNetworkPathResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveSites">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getActiveSitesRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getActiveSitesResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="knownMetrics">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="knownMetricsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="knownMetricsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQueues">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getQueuesRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getQueuesResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQueueInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getQueueInfoRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getQueueInfoResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQueueConf">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getQueueConfRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getQueueConfResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceUtilization">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getResourceUtilizationRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getResourceUtilizationResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLogs">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getLogsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getLogsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="AdaptiveServiceException">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdaptiveInterfaceService">
+    <wsdl:port binding="impl:AdaptiveSoapBinding" name="Adaptive">
+      <wsdlsoap:address location="http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

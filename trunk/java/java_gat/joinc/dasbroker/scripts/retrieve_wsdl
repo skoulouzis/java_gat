@@ -1,0 +1,3 @@
+#!/bin/sh
+
+wget http://fs0.das3.cs.vu.nl:8765/axis/services/Adaptive?wsdl -O Adaptive.wsdl

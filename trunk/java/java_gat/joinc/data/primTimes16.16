@@ -1,0 +1,106 @@
+PrimeMaster started
+Using worker jar: dist/Joinc0.0.1.jar
+Number of tasks : 16
+Tasks waiting 15 / running 1 / finished 0
+Tasks waiting 14 / running 2 / finished 0
+Tasks waiting 13 / running 3 / finished 0
+Tasks waiting 12 / running 4 / finished 0
+Tasks waiting 11 / running 5 / finished 0
+Tasks waiting 10 / running 6 / finished 0
+Tasks waiting 9 / running 7 / finished 0
+Tasks waiting 8 / running 8 / finished 0
+Tasks waiting 7 / running 9 / finished 0
+Tasks waiting 6 / running 10 / finished 0
+Tasks waiting 5 / running 11 / finished 0
+Tasks waiting 4 / running 12 / finished 0
+Tasks waiting 3 / running 13 / finished 0
+Tasks waiting 2 / running 14 / finished 0
+Tasks waiting 1 / running 15 / finished 0
+Tasks waiting 0 / running 16 / finished 0
+Tasks waiting 0 / running 15 / finished 1
+Tasks waiting 0 / running 14 / finished 2
+Tasks waiting 0 / running 13 / finished 3
+Tasks waiting 0 / running 12 / finished 4
+Tasks waiting 0 / running 11 / finished 5
+Tasks waiting 0 / running 10 / finished 6
+Tasks waiting 0 / running 9 / finished 7
+Tasks waiting 0 / running 8 / finished 8
+Tasks waiting 0 / running 7 / finished 9
+Tasks waiting 0 / running 6 / finished 10
+Tasks waiting 0 / running 5 / finished 11
+Tasks waiting 0 / running 4 / finished 12
+Tasks waiting 0 / running 3 / finished 13
+Tasks waiting 0 / running 2 / finished 14
+Tasks waiting 0 / running 1 / finished 15
+Tasks waiting 0 / running 0 / finished 16
+ Job0
+Assigned to: fs0.das3.cs.vu.nl
+Total: 94.901
+ Job1
+Assigned to: fs1.das3.liacs.nl
+Total: 93.043
+ Job2
+Assigned to: fs2.das3.science.uva.nl
+Total: 95.625
+ Job3
+Assigned to: fs3.das3.tudelft.nl
+Total: 92.075
+ Job4
+Assigned to: fs4.das3.science.uva.nl
+Total: 92.744
+ Job5
+Assigned to: fs0.das3.cs.vu.nl
+Total: 90.669
+ Job6
+Assigned to: fs1.das3.liacs.nl
+Total: 89.997
+ Job7
+Assigned to: fs2.das3.science.uva.nl
+Total: 95.313
+ Job8
+Assigned to: fs3.das3.tudelft.nl
+Total: 90.579
+ Job9
+Assigned to: fs4.das3.science.uva.nl
+Total: 95.907
+ Job10
+Assigned to: fs0.das3.cs.vu.nl
+Total: 93.125
+ Job11
+Assigned to: fs1.das3.liacs.nl
+Total: 94.429
+ Job12
+Assigned to: fs2.das3.science.uva.nl
+Total: 95.742
+ Job13
+Assigned to: fs3.das3.tudelft.nl
+Total: 95.045
+ Job14
+Assigned to: fs4.das3.science.uva.nl
+Total: 94.312
+ Job15
+Assigned to: fs0.das3.cs.vu.nl
+Total: 93.527
+Average time per job 93.564
+
+Tasks finished: 16 (OK)
+Results:
+  1234567890 -> 2 * 3 * 3 * 5 * 3607 * 3803
+  1234567891 -> 1234567891
+  1234567892 -> 2 * 2 * 41 * 7527853
+  1234567893 -> 3 * 13 * 31655587
+  1234567894 -> 2 * 7 * 47 * 479 * 3917
+  1234567895 -> 5 * 11 * 23 * 975943
+  1234567896 -> 2 * 2 * 2 * 3 * 83 * 619763
+  1234567897 -> 17 * 73 * 994817
+  1234567898 -> 2 * 61 * 10119409
+  1234567899 -> 3 * 3 * 3 * 3 * 109 * 139831
+  1234567900 -> 2 * 2 * 5 * 5 * 37 * 333667
+  1234567901 -> 7 * 31 * 613 * 9281
+  1234567902 -> 2 * 3 * 19 * 53 * 204331
+  1234567903 -> 29 * 42571307
+  1234567904 -> 2 * 2 * 2 * 2 * 2 * 38580247
+  1234567905 -> 3 * 5 * 443 * 185789
+
+Master time: 112 sec.
+Worker time: 1144 sec.

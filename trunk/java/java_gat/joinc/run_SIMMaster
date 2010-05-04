@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# source ~/.bashrc 
+
+VER=0.0.3
+
+GAT_ADAPTOR_LOCATION=$GAT_LOCATION/lib/adaptors/
+
+DAS_ADAPTOR_DIR=dasbroker/jar
+
+GAT_JARS=$GAT_LOCATION/gridlabAdaptors/external/axis.jar:$GAT_LOCATION/gridlabAdaptors/external/jaxrpc.jar:$GAT_LOCATION/gridlabAdaptors/external/commons-discovery.jar:$GAT_LOCATION/lib/commons-logging-1.1.jar
+
+DELPHOI_STUBS=$DAS_ADAPTOR_DIR/delphoiStubs.jar
+
+JOINC_CLASSPATH=dist/Joinc$VER.jar:$GAT_JARS:$DELPHOI_STUBS
+
+GAT_ADAPTOR_LOCATION=$DAS_ADAPTOR_DIR:$GAT_ADAPTOR_LOCATION
+
+java -Dgat.adaptor.path=$GAT_ADAPTOR_LOCATION -Dlog4j.configuration=file:$GAT_LOCATION/log4j.properties -cp $JOINC_CLASSPATH applications.sim.SIMMaster dist/Joinc$VER.jar $1 $2 $3 $4 $5

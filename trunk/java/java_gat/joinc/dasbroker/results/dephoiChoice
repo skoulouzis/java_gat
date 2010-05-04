@@ -1,0 +1,79 @@
+SIM Master started.
+Using input file  : in
+Using worker jar  : dist/Joinc0.0.3.jar
+Number of tasks   : 16
+Time per task     : 5 sec.
+Chance of crash   : 0.0
+Site: fs0.das3.cs.vu.nl score: 88.0
+Site: fs3.das3.tudelft.nl score: 136.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Site choosen : fs3.das3.tudelft.nl
+Tasks waiting 0 / running 15 / finished 1
+Tasks waiting 0 / running 14 / finished 2
+Tasks waiting 0 / running 13 / finished 3
+Tasks waiting 0 / running 12 / finished 4
+Tasks waiting 0 / running 11 / finished 5
+Tasks waiting 0 / running 10 / finished 6
+Tasks waiting 0 / running 9 / finished 7
+Tasks waiting 0 / running 8 / finished 8
+Tasks waiting 0 / running 7 / finished 9
+Tasks waiting 0 / running 6 / finished 10
+Tasks waiting 0 / running 5 / finished 11
+Tasks waiting 0 / running 4 / finished 12
+Tasks waiting 0 / running 3 / finished 13
+Tasks waiting 0 / running 2 / finished 14
+Tasks waiting 0 / running 1 / finished 15
+Tasks waiting 0 / running 0 / finished 16
+ Job0
+Total: 17.788
+ Job1
+Total: 25.002
+ Job2
+Total: 24.248
+ Job3
+Total: 15.309
+ Job4
+Total: 24.622
+ Job5
+Total: 23.863
+ Job6
+Total: 21.092
+ Job7
+Total: 22.31
+ Job8
+Total: 25.567
+ Job9
+Total: 24.763
+ Job10
+Total: 24.046
+ Job11
+Total: 23.283
+ Job12
+Total: 24.572
+ Job13
+Total: 23.822
+ Job14
+Total: 23.079
+ Job15
+Total: 22.075
+Average time per job 22.84
+
+Tasks finished: 16 (OK)
+Master time: 38 sec.
+Worker time: 80 sec.

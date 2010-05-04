@@ -1,0 +1,75 @@
+SIM Master started.
+Using input file  : in
+Using worker jar  : dist/Joinc0.0.1.jar
+Number of tasks   : 16
+Time per task     : 1 sec.
+Chance of crash   : 0.0
+Tasks waiting 0 / running 15 / finished 1
+Tasks waiting 0 / running 14 / finished 2
+Tasks waiting 0 / running 13 / finished 3
+Tasks waiting 0 / running 12 / finished 4
+Tasks waiting 0 / running 11 / finished 5
+Tasks waiting 0 / running 10 / finished 6
+Tasks waiting 0 / running 9 / finished 7
+Tasks waiting 0 / running 8 / finished 8
+Tasks waiting 0 / running 7 / finished 9
+Tasks waiting 0 / running 6 / finished 10
+Tasks waiting 0 / running 5 / finished 11
+Tasks waiting 0 / running 4 / finished 12
+Tasks waiting 0 / running 3 / finished 13
+Tasks waiting 0 / running 2 / finished 14
+Tasks waiting 0 / running 1 / finished 15
+Tasks waiting 0 / running 0 / finished 16
+ Job0
+Assigned to: fs0.das3.cs.vu.nl
+Total: 17.626
+ Job1
+Assigned to: fs1.das3.liacs.nl
+Total: 14.536
+ Job2
+Assigned to: fs2.das3.science.uva.nl
+Total: 13.215
+ Job3
+Assigned to: fs3.das3.tudelft.nl
+Total: 18.037
+ Job4
+Assigned to: fs0.das3.cs.vu.nl
+Total: 15.193
+ Job5
+Assigned to: fs1.das3.liacs.nl
+Total: 14.369
+ Job6
+Assigned to: fs2.das3.science.uva.nl
+Total: 13.663
+ Job7
+Assigned to: fs3.das3.tudelft.nl
+Total: 12.974
+ Job8
+Assigned to: fs0.das3.cs.vu.nl
+Total: 14.149
+ Job9
+Assigned to: fs1.das3.liacs.nl
+Total: 13.461
+ Job10
+Assigned to: fs2.das3.science.uva.nl
+Total: 14.768
+ Job11
+Assigned to: fs3.das3.tudelft.nl
+Total: 14.038
+ Job12
+Assigned to: fs0.das3.cs.vu.nl
+Total: 14.681
+ Job13
+Assigned to: fs1.das3.liacs.nl
+Total: 13.776
+ Job14
+Assigned to: fs2.das3.science.uva.nl
+Total: 12.887
+ Job15
+Assigned to: fs3.das3.tudelft.nl
+Total: 14.043
+Average time per job 14.463
+
+Tasks finished: 16 (OK)
+Master time: 35 sec.
+Worker time: 16 sec.

@@ -1,0 +1,40 @@
+#!/bin/sh
+
+rm sites dephoiChoice fs0Choice fs1Choice fs2Choice fs3Choice
+
+# Run jubs by score
+echo Adaptoprs choice
+for ((i=0;i<=5;i+=1)); do
+        echo Test num $i
+        ./run_SIMMaster $1 $2 $3 $4 in >> dephoiChoice
+done
+
+
+
+echo "fs0.das3.cs.vu.nl" > sites
+echo fs0 choice
+for ((i=0;i<=5;i+=1)); do
+        echo Test num $i
+        ./run_SIMMaster $1 $2 $3 $4 in >> fs0Choice
+done
+
+echo "fs1.das3.liacs.nl" > sites
+echo fs1 choicefor
+for ((i=0;i<=5;i+=1)); do
+        echo Test num $i
+        ./run_SIMMaster $1 $2 $3 $4 in >> fs1Choice
+done
+
+echo "fs2.das3.science.uva.nl" > sites
+echo fs2 choice
+for ((i=0;i<=5;i+=1)); do
+        echo Test num $i
+        ./run_SIMMaster $1 $2 $3 $4 in >> fs2Choice
+done
+
+echo "fs3.das3.tudelft.nl" > sites
+echo fs3 choice
+for ((i=0;i<=5;i+=1)); do
+        echo Test num $i
+        ./run_SIMMaster $1 $2 $3 $4 in >> fs3Choice
+done

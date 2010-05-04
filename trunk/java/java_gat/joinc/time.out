@@ -1,0 +1,6 @@
+SIM Master started.
+Using input file  : in
+Using worker jar  : dist/Joinc.jar
+Number of tasks   : 1
+Time per task     : 1 sec.
+Chance of crash   : 1.0

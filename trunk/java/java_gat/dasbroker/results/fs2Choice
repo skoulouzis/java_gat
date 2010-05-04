@@ -1,0 +1,79 @@
+SIM Master started.
+Using input file  : in
+Using worker jar  : dist/Joinc0.0.3.jar
+Number of tasks   : 16
+Time per task     : 5 sec.
+Chance of crash   : 0.0
+Site: fs0.das3.cs.vu.nl score: 93.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Cluster : fs2.das3.science.uva.nl
+Tasks waiting 0 / running 15 / finished 1
+Tasks waiting 0 / running 14 / finished 2
+Tasks waiting 0 / running 13 / finished 3
+Tasks waiting 0 / running 12 / finished 4
+Tasks waiting 0 / running 11 / finished 5
+Tasks waiting 0 / running 10 / finished 6
+Tasks waiting 0 / running 9 / finished 7
+Tasks waiting 0 / running 8 / finished 8
+Tasks waiting 0 / running 7 / finished 9
+Tasks waiting 0 / running 6 / finished 10
+Tasks waiting 0 / running 5 / finished 11
+Tasks waiting 0 / running 4 / finished 12
+Tasks waiting 0 / running 3 / finished 13
+Tasks waiting 0 / running 2 / finished 14
+Tasks waiting 0 / running 1 / finished 15
+Tasks waiting 0 / running 0 / finished 16
+ Job0
+Total: 14.992
+ Job1
+Total: 14.203
+ Job2
+Total: 13.455
+ Job3
+Total: 26.721
+ Job4
+Total: 25.93
+ Job5
+Total: 15.136
+ Job6
+Total: 24.469
+ Job7
+Total: 23.77
+ Job8
+Total: 23.065
+ Job9
+Total: 22.348
+ Job10
+Total: 21.639
+ Job11
+Total: 24.996
+ Job12
+Total: 24.263
+ Job13
+Total: 23.543
+ Job14
+Total: 22.841
+ Job15
+Total: 24.105
+Average time per job 21.592
+
+Tasks finished: 16 (OK)
+Master time: 39 sec.
+Worker time: 80 sec.
