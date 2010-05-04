@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# OGSA=$GAT_LOCATION/gridlabAdaptors/lib
+
+# GEN_CLASSPATH=$OGSA/axis.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/cog-axis.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/cog-jglobus-1.2-rob.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/cog-tomcat.jar
+
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/cryptix-asn1.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/cryptix.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/cryptix32.jar
+
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/jboss-j2ee.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/jce-jdk13-120.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/jgss.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/ogsa-samples.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/ogsa.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/puretls.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/saaj.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/servlet.jar
+
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/wsif.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/xalan.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/xmlsec.jar
+
+
+# ----------------------
+# GEN_CLASSPATH=$GEN_CLASSPATH:$GAT_LOCATION/engine/lib/commons-logging.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/commons-discovery.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/jaxrpc.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$OGSA/wsdl4j.jar
+
+# GEN_CLASSPATH=$GEN_CLASSPATH:$GAT_LOCATION/engine/lib/xercesImpl.jar
+
+# GEN_CLASSPATH=$GEN_CLASSPATH:$GAT_LOCATION/engine/lib/log4j-1.2.13.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$GAT_LOCATION/engine/lib/log4j-core.jar
+# GEN_CLASSPATH=$GEN_CLASSPATH:$GAT_LOCATION/engine/lib/xmlParserAPIs.jar 
+
+# ALL=`ls $GAT_LOCATION/adaptors/*.jar`
+
+# GEN_CLASSPATH=$GEN_CLASSPATH:$ALL
+
+GEN_CLASSPATH=../lib/axis.jar
+GEN_CLASSPATH=$GEN_CLASSPATH:../lib/commons-logging.jar
+GEN_CLASSPATH=$GEN_CLASSPATH:../lib/commons-discovery-0.2.jar
+GEN_CLASSPATH=$GEN_CLASSPATH:../lib/jaxrpc.jar
+GEN_CLASSPATH=$GEN_CLASSPATH:../lib/wsdl4j-1.5.1.jar
+GATADAPTORS=../../GATAdaptors
+GEN_CLASSPATH=$GEN_CLASSPATH:$GATADAPTORS/cog-axis.jar
+
+
+
+mkdir -p build/generated
+
+java -cp $GEN_CLASSPATH -Djava.protocol.handler.pkgs=org.globus.net.protocol org.apache.axis.wsdl.WSDL2Java -v --NStoPkg http://fs0.das2.cs.vu.nl:8765/axis/services/Adaptive=adaptive.service -o src Adaptive.wsdl
+

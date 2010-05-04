@@ -1,0 +1,53 @@
+Introduction:
+	This is a resource broker for the DAS-3 cluster. It is imlemnted so that jobs are subited to the "best" DAS-e site.
+
+Scripts:
+	The archieve also contains scripts to retrieve the WSDL file from the webservice, and to generate the necessary Java code using WSDL2Java. 
+
+	To retrieve the WDSL file, go to the dasbroker directory and  type: 
+
+	   ./scripts/retrieve_wsdl
+  
+	An Adaptive.wsdl file should now have appeared in the directory.
+	Next type: 
+   	./scripts/generate_stubs
+
+ 	This will generate the webservice stub and Bean classes. They  will appear in the following directories: 
+	
+	./src/adaptive/beans
+   	./src/adaptive/service
+
+	 To use them in your DASBrokerAdaptor, just add the import 
+ 	statements:
+
+   	import adaptive.beans.*;
+   	import adaptive.service.*;
+
+
+Requrements:
+	-Java 1.5 or higer 
+	-JavaGAT-1.7.1 
+
+Building a jar:
+
+	By using 'ant', all source code in the 'src' directory will 
+	be compiled an a jar file will be created that contains the 
+	classes and a special MANIFEST file that is required for the 
+	JavaGAT. 
+	
+	For more information, see the course's webpage:
+	
+	http://www.cs.vu.nl/~aagapi/c_and_g/
+
+Runing with a JOINC application:
+	Either use the run_PrimeMaster or run_SIMMaster. Alternativally you may use the scrip at $GAT_LOCATION/bin/run_grid_app, but make sure that you set the adaptors location:
+	
+	export DAS_ADAPTOR=dasbroker/jar/DASResourceBrokerAdaptor.jar
+
+	and add the stubs in the classpath 
+	
+	CLASSPATH=$CLASSPATH:/delphoiStubs.jar
+ 
+
+
+

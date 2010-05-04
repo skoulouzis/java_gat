@@ -1,0 +1,127 @@
+SIM Master started.
+Using input file  : in
+Using worker jar  : dist/Joinc0.0.3.jar
+Number of tasks   : 16
+Time per task     : 5 sec.
+Chance of crash   : 0.0
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Cluster : fs1.das3.liacs.nl
+Cluster : fs1.das3.liacs.nl
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Site: fs0.das3.cs.vu.nl score: 91.0
+Site: fs3.das3.tudelft.nl score: 132.0
+Site: fs1.das3.liacs.nl score: 64.0
+Site: fs2.das3.science.uva.nl score: 80.0
+Cluster : fs1.das3.liacs.nl
+Tasks waiting 0 / running 15 / finished 1
+Tasks waiting 0 / running 14 / finished 2
+Tasks waiting 0 / running 13 / finished 3
+Tasks waiting 0 / running 12 / finished 4
+Tasks waiting 0 / running 11 / finished 5
+Tasks waiting 0 / running 10 / finished 6
+Tasks waiting 0 / running 9 / finished 7
+Tasks waiting 0 / running 8 / finished 8
+Tasks waiting 0 / running 7 / finished 9
+Tasks waiting 0 / running 6 / finished 10
+Tasks waiting 0 / running 5 / finished 11
+Tasks waiting 0 / running 4 / finished 12
+Tasks waiting 0 / running 3 / finished 13
+Tasks waiting 0 / running 2 / finished 14
+Tasks waiting 0 / running 1 / finished 15
+Tasks waiting 0 / running 0 / finished 16
+ Job0
+Total: 24.919
+ Job1
+Total: 18.1
+ Job2
+Total: 19.329
+ Job3
+Total: 26.606
+ Job4
+Total: 21.485
+ Job5
+Total: 24.29
+ Job6
+Total: 23.206
+ Job7
+Total: 22.107
+ Job8
+Total: 25.048
+ Job9
+Total: 23.918
+ Job10
+Total: 22.757
+ Job11
+Total: 23.637
+ Job12
+Total: 22.16
+ Job13
+Total: 26.744
+ Job14
+Total: 21.268
+ Job15
+Total: 24.086
+Average time per job 23.103
+
+Tasks finished: 16 (OK)
+Master time: 45 sec.
+Worker time: 80 sec.
